@@ -117,7 +117,7 @@ body.panel-open .canvas{ transform-origin:left center; }
    SLIDE 3 — ANGO 空き家再生モデル
    ===================================================================== */
 #s3 .b1{ width:380px;height:380px; right:-120px; top:-120px; } #s3 .b2{ width:300px;height:300px; left:-120px; bottom:-120px; }
-#s3 .s-body{ justify-content:center; gap:26px; }
+#s3 .s-body{ justify-content:center; gap:52px; }
 #s3 .diagram{ position:relative; width:1000px; height:300px; margin:0 auto; }
 #s3 .benefits{ display:flex; gap:14px; justify-content:center; }
 #s3 .bcard{ flex:1; max-width:330px; display:flex; align-items:center; gap:13px; background:#fff;
