@@ -195,17 +195,25 @@ body.panel-open .canvas{ transform-origin:left center; }
 #s5 .b1{ width:420px;height:420px; right:-120px; top:-130px; } #s5 .b2{ width:340px;height:340px; left:-120px; bottom:-120px; }
 #s5 .s-body{ justify-content:center; }
 /* layered architecture: info layer (bottom) → arrows → roles (top) + matching, with FANGO AI straddling */
-#s5 .arch{ position:relative; width:920px; height:400px; margin:0 auto; }
+#s5 .arch{ position:relative; width:920px; height:430px; margin:0 auto; }
 #s5 .aarrows{ position:absolute; left:0; top:0; z-index:1; }
+#s5 .bubble{ position:absolute; top:0; transform:translateX(-50%); width:248px; z-index:3;
+             background:#fff; border:1px solid var(--line); border-radius:13px; padding:11px 15px;
+             box-shadow:0 14px 30px -16px rgba(10,37,64,.32); text-align:center;
+             font-size:12px; font-weight:700; color:var(--ink-2); line-height:1.55; }
+#s5 .bubble .tail{ position:absolute; left:50%; bottom:-9px; transform:translateX(-50%); width:0; height:0;
+             border-left:9px solid transparent; border-right:9px solid transparent; border-top:9px solid #fff; }
+#s5 .bubble .tail::before{ content:""; position:absolute; left:-9px; top:-11px; width:0; height:0;
+             border-left:9px solid transparent; border-right:9px solid transparent; border-top:10px solid var(--line); z-index:-1; }
 #s5 .role{ position:absolute; top:0; transform:translateX(-50%); text-align:center; width:170px; z-index:3; }
 #s5 .role .ic{ font-family:"Material Symbols Rounded"; font-size:48px; line-height:1;
                background:var(--grad); -webkit-background-clip:text; background-clip:text; color:transparent; }
 #s5 .role .rl{ font-size:15.5px; font-weight:800; color:var(--ink); margin-top:4px; }
-#s5 .match{ position:absolute; top:26px; left:50%; transform:translate(-50%,-50%); z-index:4;
+#s5 .match{ position:absolute; top:104px; left:50%; transform:translate(-50%,-50%); z-index:4;
             display:flex; align-items:center; gap:7px; background:#fff; border:1px solid var(--line); border-radius:999px;
             padding:7px 16px; font-size:13px; font-weight:800; color:var(--blurple); box-shadow:0 8px 20px -12px rgba(10,37,64,.3); }
 #s5 .match .ic{ font-family:"Material Symbols Rounded"; font-size:18px; }
-#s5 .ai-layer{ position:absolute; left:64px; right:64px; top:152px; z-index:2; border-radius:16px; padding:17px 28px;
+#s5 .ai-layer{ position:absolute; left:64px; right:64px; top:240px; z-index:2; border-radius:16px; padding:17px 28px;
                background:var(--grad); color:#fff; box-shadow:0 18px 42px -18px rgba(122,90,240,.6);
                display:flex; align-items:center; justify-content:center; gap:24px; }
 #s5 .ai-layer .ai-h{ display:flex; align-items:center; gap:9px; font-size:21px; font-weight:800; letter-spacing:.01em; }
@@ -213,8 +221,10 @@ body.panel-open .canvas{ transform-origin:left center; }
 #s5 .ai-layer .ai-bs{ display:flex; gap:10px; }
 #s5 .ai-layer .ai-bs span{ font-size:13.5px; font-weight:700; background:rgba(255,255,255,.22); border-radius:999px; padding:7px 16px; }
 #s5 .info-layer{ position:absolute; left:0; right:0; bottom:0; z-index:2; border-radius:14px; padding:19px 26px;
-                 background:var(--subtle); border:1px solid var(--line); display:flex; align-items:center; justify-content:center; gap:12px;
-                 font-size:15.5px; font-weight:800; color:var(--ink); }
+                 background:#fff; border:1px solid #DCE3EC; display:flex; align-items:center; justify-content:center; gap:12px;
+                 font-size:15.5px; font-weight:800; color:var(--ink);
+                 box-shadow:0 16px 34px -14px rgba(10,37,64,.22), 0 2px 0 #E4E9F0; }
+#s5 .info-layer::before{ content:""; position:absolute; left:0; top:0; bottom:0; width:6px; border-radius:14px 0 0 14px; background:var(--grad); }
 #s5 .info-layer .ic{ font-family:"Material Symbols Rounded"; font-size:27px; color:var(--blurple); }
 
 
