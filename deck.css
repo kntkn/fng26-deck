@@ -107,8 +107,15 @@ body.panel-open .canvas{ transform-origin:left center; }
    SLIDE 3 — ANGO 空き家再生モデル
    ===================================================================== */
 #s3 .b1{ width:380px;height:380px; right:-120px; top:-120px; } #s3 .b2{ width:300px;height:300px; left:-120px; bottom:-120px; }
-#s3 .s-body{ justify-content:center; }
-#s3 .diagram{ position:relative; width:1000px; height:340px; margin:0 auto; }
+#s3 .s-body{ justify-content:center; gap:26px; }
+#s3 .diagram{ position:relative; width:1000px; height:300px; margin:0 auto; }
+#s3 .benefits{ display:flex; gap:14px; justify-content:center; }
+#s3 .bcard{ flex:1; max-width:330px; display:flex; align-items:center; gap:13px; background:#fff;
+            border:1px solid var(--line); border-radius:13px; padding:14px 18px; box-shadow:0 12px 30px -20px rgba(10,37,64,.2); }
+#s3 .bcard .ic{ font-family:"Material Symbols Rounded"; font-size:30px; line-height:1; flex:0 0 auto;
+                background:var(--grad); -webkit-background-clip:text; background-clip:text; color:transparent; }
+#s3 .bcard .bt{ font-size:12.5px; font-weight:700; color:var(--ink-2); line-height:1.5; }
+#s3 .bcard .bt b{ color:var(--blurple); font-weight:800; }
 /* year bar (top): 180 operating days + 185 open days */
 #s3 .yb-track{ position:absolute; left:0; right:0; top:0; display:flex; height:50px; border-radius:12px;
                overflow:hidden; box-shadow:0 12px 30px -16px rgba(10,37,64,.3); }
