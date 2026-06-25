@@ -193,27 +193,29 @@ body.panel-open .canvas{ transform-origin:left center; }
    SLIDE 5 — from "findable" to "circulated" (vision)
    ===================================================================== */
 #s5 .b1{ width:420px;height:420px; right:-120px; top:-130px; } #s5 .b2{ width:340px;height:340px; left:-120px; bottom:-120px; }
-#s5 .gapflow{ flex:1; display:grid; grid-template-columns:0.9fr 38px 1.35fr 38px 0.9fr; align-items:center; gap:4px; }
-#s5 .zone{ border-radius:18px; padding:26px 18px; text-align:center; background:#fff; border:1px solid var(--line);
-           box-shadow:0 14px 34px -22px rgba(10,37,64,.2); }
-#s5 .zone .ic{ font-family:"Material Symbols Rounded"; font-size:44px; line-height:1;
+#s5 .s-body{ justify-content:center; }
+/* layered architecture: info layer (bottom) → arrows → roles (top) + matching, with FANGO AI straddling */
+#s5 .arch{ position:relative; width:920px; height:400px; margin:0 auto; }
+#s5 .aarrows{ position:absolute; left:0; top:0; z-index:1; }
+#s5 .role{ position:absolute; top:0; transform:translateX(-50%); text-align:center; width:170px; z-index:3; }
+#s5 .role .ic{ font-family:"Material Symbols Rounded"; font-size:48px; line-height:1;
                background:var(--grad); -webkit-background-clip:text; background-clip:text; color:transparent; }
-#s5 .zone .zt{ font-size:18px; font-weight:800; color:var(--ink); margin-top:12px; }
-#s5 .zone .zs{ font-size:11px; font-weight:600; color:var(--muted); margin-top:7px; line-height:1.55; }
-#s5 .zone.flow{ background:var(--grad); border:none; box-shadow:0 22px 46px -18px rgba(122,90,240,.5); }
-#s5 .zone.flow .ic{ background:none; -webkit-background-clip:initial; -webkit-text-fill-color:#fff; }
-#s5 .zone.flow .zt{ color:#fff; } #s5 .zone.flow .zs{ color:rgba(255,255,255,.95); }
-#s5 .ga{ text-align:center; font-size:24px; font-weight:300; color:var(--blurple); }
-#s5 .gap{ border-radius:18px; padding:18px 20px; background:var(--subtle); border:1px solid var(--line); }
-#s5 .gap .gh{ font-size:12.5px; font-weight:800; color:var(--ink); text-align:center; margin-bottom:13px; }
-#s5 .grow{ display:flex; align-items:center; gap:13px; padding:12px 15px; background:#fff; border:1px solid var(--line); border-radius:13px; }
-#s5 .grow + .grow{ margin-top:10px; }
-#s5 .grow .ic{ font-family:"Material Symbols Rounded"; font-size:26px; color:var(--blurple); flex:0 0 auto; }
-#s5 .grow .gt{ font-size:12.5px; font-weight:700; color:var(--ink-2); line-height:1.5; }
-#s5 .purposes{ display:flex; gap:7px; margin-top:8px; }
-#s5 .pchip{ display:inline-flex; align-items:center; gap:5px; font-size:11px; font-weight:700; color:var(--blurple);
-            background:#EEF0FF; border-radius:999px; padding:4px 11px; }
-#s5 .pchip .ic{ font-family:"Material Symbols Rounded"; font-size:15px; color:var(--blurple); }
+#s5 .role .rl{ font-size:15.5px; font-weight:800; color:var(--ink); margin-top:4px; }
+#s5 .match{ position:absolute; top:26px; left:50%; transform:translate(-50%,-50%); z-index:4;
+            display:flex; align-items:center; gap:7px; background:#fff; border:1px solid var(--line); border-radius:999px;
+            padding:7px 16px; font-size:13px; font-weight:800; color:var(--blurple); box-shadow:0 8px 20px -12px rgba(10,37,64,.3); }
+#s5 .match .ic{ font-family:"Material Symbols Rounded"; font-size:18px; }
+#s5 .ai-layer{ position:absolute; left:64px; right:64px; top:152px; z-index:2; border-radius:16px; padding:17px 28px;
+               background:var(--grad); color:#fff; box-shadow:0 18px 42px -18px rgba(122,90,240,.6);
+               display:flex; align-items:center; justify-content:center; gap:24px; }
+#s5 .ai-layer .ai-h{ display:flex; align-items:center; gap:9px; font-size:21px; font-weight:800; letter-spacing:.01em; }
+#s5 .ai-layer .ai-h .ic{ font-family:"Material Symbols Rounded"; font-size:30px; }
+#s5 .ai-layer .ai-bs{ display:flex; gap:10px; }
+#s5 .ai-layer .ai-bs span{ font-size:13.5px; font-weight:700; background:rgba(255,255,255,.22); border-radius:999px; padding:7px 16px; }
+#s5 .info-layer{ position:absolute; left:0; right:0; bottom:0; z-index:2; border-radius:14px; padding:19px 26px;
+                 background:var(--subtle); border:1px solid var(--line); display:flex; align-items:center; justify-content:center; gap:12px;
+                 font-size:15.5px; font-weight:800; color:var(--ink); }
+#s5 .info-layer .ic{ font-family:"Material Symbols Rounded"; font-size:27px; color:var(--blurple); }
 
 
 /* ============ /deck engine chrome (nav · comment · banner · modal · avatar) ============ */
