@@ -150,45 +150,43 @@ body.panel-open .canvas{ transform-origin:left center; }
    SLIDE 4 — FANGO value-up model (all vacant houses)
    ===================================================================== */
 #s4 .b1{ width:380px;height:380px; right:-130px; top:-120px; } #s4 .b2{ width:300px;height:300px; left:-120px; bottom:-120px; }
-#s4 .s-body{ justify-content:center; gap:6px; }
-#s4 .flow{ display:grid; grid-template-columns:150px 56px 230px 56px 1fr; align-items:center; align-content:center; row-gap:30px; }
-#s4 .col{ display:flex; flex-direction:column; gap:16px; }
-#s4 .ncard{ border-radius:14px; padding:16px 14px; text-align:center; }
-#s4 .ncard .ic{ font-family:"Material Symbols Rounded"; font-size:30px; line-height:1; background:var(--grad); -webkit-background-clip:text; background-clip:text; color:transparent; }
-#s4 .ncard .lab{ font-size:13px; font-weight:700; color:var(--ink); margin-top:7px; }
-#s4 .fango{ border-radius:18px; padding:30px 18px; text-align:center; color:#fff; background:var(--grad); box-shadow:0 20px 44px -18px rgba(122,90,240,.55); }
-#s4 .fango .nm{ font-size:30px; font-weight:800; letter-spacing:-.01em; }
-#s4 .fango .sb{ font-size:12px; font-weight:600; opacity:.95; margin-top:6px; }
-#s4 .fango .cap{ font-size:11px; font-weight:700; opacity:.92; margin-bottom:10px; letter-spacing:.06em; }
-#s4 .conn{ position:relative; height:100%; display:flex; align-items:center; justify-content:center; }
-#s4 .conn .ln{ width:100%; height:2px; background:linear-gradient(90deg,#C9D3E6,#D8C9EC); }
-#s4 .conn .lab{ position:absolute; top:50%; left:50%; transform:translate(-50%,-150%); font-size:11px; font-weight:700; color:var(--blurple); white-space:nowrap; background:#fff; padding:0 6px; }
-#s4 .outs{ display:flex; flex-direction:column; gap:13px; }
-#s4 .orow{ display:grid; grid-template-columns:auto 1fr; gap:14px; align-items:center; }
-#s4 .otag{ font-size:11.5px; font-weight:700; color:var(--blurple); white-space:nowrap; }
-#s4 .ocard{ border-radius:12px; padding:11px 16px; display:flex; align-items:center; gap:12px; }
-#s4 .ocard .ic{ font-family:"Material Symbols Rounded"; font-size:22px; background:var(--grad); -webkit-background-clip:text; background-clip:text; color:transparent; }
-#s4 .ocard .lab{ font-size:13px; font-weight:700; color:var(--ink); }
-/* expansion: proportional 1% vs 100% bars (full width), tied to 空き家 */
-#s4 .expand2{ margin-top:30px; position:relative; }
-#s4 .expand2 .sc-conn{ position:absolute; left:66px; top:-30px; width:2px; height:30px;
-                       background:linear-gradient(#C9D3E6,#B9A8E0); }
-#s4 .expand2 .sc-conn::before{ content:""; position:absolute; left:-3px; top:-7px;
-                       border-left:4px solid transparent; border-right:4px solid transparent; border-bottom:7px solid #B9A8E0; }
-#s4 .ex2-cap{ font-size:13px; font-weight:800; color:var(--ink); margin-bottom:15px; }
-#s4 .ex2-cap b{ color:var(--blurple); }
-#s4 .ex2-row{ display:grid; grid-template-columns:128px 1fr 232px; gap:18px; align-items:center; }
-#s4 .ex2-row + .ex2-row{ margin-top:13px; }
-#s4 .ex2-name{ font-size:13.5px; font-weight:800; color:var(--ink); line-height:1.3; }
-#s4 .ex2-name small{ display:block; font-size:10.5px; font-weight:600; color:var(--muted); }
-#s4 .ex2-track{ height:32px; background:var(--subtle); border:1px solid var(--line); border-radius:8px; overflow:hidden; }
-#s4 .ex2-fill{ height:100%; border-radius:7px; }
-#s4 .ex2-row.from .ex2-fill{ width:1%; min-width:8px; background:#A7B0E6; }
-#s4 .ex2-row.to .ex2-fill{ width:100%; background:var(--grad); box-shadow:0 8px 22px -10px rgba(122,90,240,.5); }
-#s4 .ex2-val{ font-size:13px; font-weight:700; color:var(--muted); display:flex; align-items:baseline; gap:7px; white-space:nowrap; }
-#s4 .ex2-val .pct{ font-size:30px; font-weight:800; letter-spacing:-.02em; color:var(--ink-2); }
-#s4 .ex2-row.to .ex2-val .pct{ font-size:40px; background:var(--grad); -webkit-background-clip:text; background-clip:text; color:transparent; }
-#s4 .ex2-row.to .ex2-val{ color:var(--ink); }
+#s4 .s-body{ justify-content:center; align-items:center; }
+#s4 .vmap{ position:relative; width:1150px; height:520px; }
+#s4 .vlines{ position:absolute; inset:0; z-index:1; pointer-events:none; }
+
+/* generic node card (空き家 / recipients) */
+#s4 .node{ position:absolute; z-index:2; transform:translate(-50%,-50%);
+           display:flex; flex-direction:column; align-items:center; gap:6px;
+           background:#fff; border:1px solid var(--line); border-radius:14px;
+           padding:14px 18px; min-width:120px; box-shadow:0 10px 26px -16px rgba(20,40,90,.28); }
+#s4 .node .ic{ font-family:"Material Symbols Rounded"; font-size:30px; line-height:1;
+           background:var(--grad); -webkit-background-clip:text; background-clip:text; color:transparent; }
+#s4 .node .lab{ font-size:14px; font-weight:800; color:var(--ink); white-space:nowrap; }
+
+/* FANGO core box */
+#s4 .fango{ position:absolute; z-index:2; transform:translate(-50%,-50%);
+            width:196px; box-sizing:border-box; border-radius:18px; padding:30px 18px; text-align:center;
+            color:#fff; background:var(--grad); box-shadow:0 22px 48px -18px rgba(122,90,240,.6); }
+#s4 .fango .cap{ font-size:12px; font-weight:700; opacity:.94; margin-bottom:12px; letter-spacing:.06em; }
+#s4 .fango .nm{ font-size:34px; font-weight:800; letter-spacing:-.01em; }
+#s4 .fango .sb{ font-size:12.5px; font-weight:600; opacity:.95; margin-top:8px; }
+
+/* plus + local-community dashed box */
+#s4 .plus{ position:absolute; z-index:2; transform:translate(-50%,-50%);
+           font-size:26px; font-weight:800; color:var(--blurple); }
+#s4 .commu{ position:absolute; z-index:2; transform:translate(-50%,-50%);
+            display:flex; gap:46px; justify-content:center; align-items:center;
+            width:300px; box-sizing:border-box; padding:18px 16px;
+            border:2px dashed #9AA6C8; border-radius:16px; background:rgba(255,255,255,.7); }
+#s4 .commu .cm{ display:flex; flex-direction:column; align-items:center; gap:6px; }
+#s4 .commu .cm .ic{ font-family:"Material Symbols Rounded"; font-size:26px; line-height:1;
+            background:var(--grad); -webkit-background-clip:text; background-clip:text; color:transparent; }
+#s4 .commu .cm .lab{ font-size:13px; font-weight:800; color:var(--ink); white-space:nowrap; }
+
+/* edge labels (white chip over the line) */
+#s4 .elab{ position:absolute; z-index:3; transform:translate(-50%,-50%);
+           font-size:12.5px; font-weight:700; color:var(--blurple); white-space:nowrap;
+           background:var(--paper); padding:2px 8px; }
 
 /* =====================================================================
    SLIDE 5 — from "findable" to "circulated" (vision)
