@@ -183,18 +183,21 @@ body.panel-open .canvas{ transform-origin:left center; }
             background:var(--grad); -webkit-background-clip:text; background-clip:text; color:transparent; }
 #s4 .commu .cm .lab{ font-size:13px; font-weight:800; color:var(--ink); white-space:nowrap; }
 
-/* coverage KPI badge above 空き家 (1% -> giant 100%) */
-#s4 .kpi{ position:absolute; z-index:3; text-align:left; }
+/* coverage KPI speech-bubble pointing at 空き家 (1% -> giant 100%) */
+#s4 .kpi{ position:absolute; z-index:3; display:inline-block; text-align:left;
+          background:#fff; border:1px solid var(--line); border-radius:14px; padding:12px 18px;
+          box-shadow:0 16px 34px -16px rgba(10,37,64,.34); }
+#s4 .kpi .tail{ position:absolute; left:70px; bottom:-9px; width:0; height:0;
+          border-left:9px solid transparent; border-right:9px solid transparent; border-top:9px solid #fff; }
+#s4 .kpi .tail::before{ content:""; position:absolute; left:-9px; top:-11px; width:0; height:0;
+          border-left:9px solid transparent; border-right:9px solid transparent; border-top:10px solid var(--line); z-index:-1; }
 #s4 .kpi-eye{ font-size:12px; font-weight:800; color:var(--muted); letter-spacing:.02em; }
 #s4 .kpi-num{ display:flex; align-items:baseline; gap:9px; margin-top:3px; }
 #s4 .kpi-num .from{ font-size:16px; font-weight:700; color:var(--faint); }
 #s4 .kpi-num .ar{ font-size:16px; font-weight:700; color:var(--faint); }
-#s4 .kpi-num .to{ font-size:60px; font-weight:800; line-height:.92; letter-spacing:-.02em;
+#s4 .kpi-num .to{ font-size:58px; font-weight:800; line-height:.92; letter-spacing:-.02em;
                   background:var(--grad); -webkit-background-clip:text; background-clip:text; color:transparent; }
 #s4 .kpi-num .to .pc{ font-size:30px; font-weight:800; }
-#s4 .kpi-cap{ font-size:12px; font-weight:700; color:var(--muted); margin-top:5px; }
-#s4 .kpi-conn{ position:absolute; z-index:1; width:2px; border-radius:2px;
-               background:linear-gradient(#C9D3E6,#B9A8E0); }
 
 /* edge labels — match the rounded-pill style used on slide 3 */
 #s4 .elab{ position:absolute; z-index:3; transform:translate(-50%,-50%); white-space:nowrap; text-align:center;
