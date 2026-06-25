@@ -66,13 +66,22 @@ body.panel-open .canvas{ transform-origin:left center; }
 .gdot{ display:inline-block; width:9px; height:9px; border-radius:50%; background:var(--grad); }
 
 /* contact pill — top-right, vertically aligned with the slide title */
-.contact{ position:absolute; top:58px; right:64px; z-index:5; display:flex; align-items:center; gap:10px;
+.contact{ position:absolute; top:58px; right:255px; z-index:5; display:flex; align-items:center; gap:10px;
           background:rgba(255,255,255,.78); backdrop-filter:blur(6px); -webkit-backdrop-filter:blur(6px);
           border:1px solid var(--line); border-radius:999px; padding:11px 22px;
           box-shadow:0 10px 26px -14px rgba(10,37,64,.3); }
 .contact .ic{ font-family:"Material Symbols Rounded"; font-size:22px; color:var(--blurple); line-height:1; }
 .contact span:last-child{ font-size:14.5px; font-weight:700; color:var(--ink-2); white-space:nowrap; }
 .contact a{ color:var(--blurple); font-weight:800; text-decoration:none; }
+/* persistent "本日の資料" QR badge, top-right beside the contact pill */
+.qrbadge{ position:absolute; top:46px; right:64px; z-index:5; display:flex; align-items:center; gap:12px;
+          background:rgba(255,255,255,.82); backdrop-filter:blur(6px); -webkit-backdrop-filter:blur(6px);
+          border:1px solid var(--line); border-radius:16px; padding:9px 12px 9px 16px;
+          box-shadow:0 10px 26px -14px rgba(10,37,64,.3); }
+.qrbadge .qrlabel{ display:flex; flex-direction:column; align-items:flex-start; gap:5px; }
+.qrbadge .ph{ width:19px; height:19px; color:var(--blurple); display:block; }
+.qrbadge .qrlabel span{ font-size:14px; font-weight:800; color:var(--ink-2); white-space:nowrap; line-height:1.1; }
+.qrbadge .qrimg{ width:62px; height:62px; display:block; border-radius:7px; }
 
 /* =====================================================================
    SLIDE 1 — RECIKA & products (UniCask / ANGO / FANGO)
