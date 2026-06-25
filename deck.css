@@ -16,6 +16,13 @@
   --text:#0A2540; --border:#E6EBF1; --red:#B82A2A;
   --slide-w:1280px; --slide-h:720px;
 }
+/* self-hosted icon font (subset, ~12KB) — no external dependency, reliable on GitHub Pages */
+@font-face{
+  font-family:"Material Symbols Rounded";
+  font-style:normal; font-weight:100 700;
+  src:url("matsym-rounded.woff2") format("woff2");
+  font-display:block;
+}
 *{ box-sizing:border-box; margin:0; padding:0; }
 html,body{ height:100%; }
 body{ font-family:var(--sans); color:var(--ink); -webkit-font-smoothing:antialiased;
