@@ -22,7 +22,7 @@
       <div class="s-body">
         <div class="prods">
           <div class="pcard glass"><div class="ic">&#xF1E8;</div><div class="pname">UniCask</div><div class="ptag">お酒 × NFT</div></div>
-          <div class="pcard glass"><div class="ic">&#xE587;</div><div class="pname">ANGO</div><div class="ptag">空き家 × トークン</div></div>
+          <div class="pcard fango"><div class="ic">&#xE587;</div><div class="pname">ANGO</div><div class="ptag">空き家 × トークン</div></div>
           <div class="pcard fango"><div class="ic">&#xF06C;</div><div class="pname">FANGO</div><div class="ptag">不動産 × AI</div></div>
           <div class="pcard glass"><div class="ic">&#xE90C;</div><div class="pname">IPconnect</div><div class="ptag">IP × AI</div></div>
           <div class="pcard glass"><div class="ic">&#xE87A;</div><div class="pname">JAPANGO</div><div class="ptag">観光 × DAO</div></div>
@@ -101,35 +101,28 @@
         <div class="s-title">ANGO空き家再生モデル</div>
       </div>
       <div class="s-body">
-        <div class="yearbar">
+        <div class="diagram">
           <div class="yb-track">
             <div class="yb-seg yb-op" style="flex:180">民泊として営業 <span class="big">180日</span></div>
             <div class="yb-seg yb-free" style="flex:185">泊まれる空き日 <span class="big">185日</span></div>
           </div>
-        </div>
-        <div class="mech">
-          <div class="mcard">
-            <div class="ic">&#xEA70;</div>
-            <div class="mt">地域の人が運営を手伝う</div>
-            <div class="ms">立ち上げ・清掃・集客・発信。<b>初期コストが下がる。</b></div>
-          </div>
-          <div class="marrow">›</div>
-          <div class="mcard hl">
-            <div class="ic">&#xEA25;</div>
-            <div class="mt">手伝いの報酬として<br>トークンを獲得</div>
-            <div class="chips"><span>現金でなく利用権</span><span>兼業不可でもOK</span></div>
-          </div>
-          <div class="marrow">›</div>
-          <div class="mcard">
-            <div class="ic">&#xE8D4;</div>
-            <div class="mt">トークンで空いている日に泊まれる</div>
-            <div class="route">
-              <span class="node">九十九里<small>で手伝う</small></span>
-              <span class="rw">&#xE8D4;</span>
-              <span class="node">京都<small>に泊まる</small></span>
-            </div>
-            <div class="ms">物件をまたいで利用 → <b>関係人口の創出</b>（必要トークンは時期で変動）</div>
-          </div>
+          <svg class="arrows" viewBox="0 0 1000 340" width="1000" height="340">
+            <defs>
+              <marker id="ah" markerWidth="10" markerHeight="10" refX="6.5" refY="5" orient="auto">
+                <path d="M0,0 L10,5 L0,10 Z" fill="#635BFF"/>
+              </marker>
+            </defs>
+            <g stroke="#635BFF" stroke-width="2.6" fill="none" marker-end="url(#ah)">
+              <line x1="246" y1="222" x2="246" y2="60"/>
+              <line x1="746" y1="222" x2="746" y2="60"/>
+              <line x1="700" y1="252" x2="296" y2="252"/>
+            </g>
+          </svg>
+          <div class="actor" style="left:246px;top:228px;"><div class="ic">&#xF235;</div><div class="al">一般旅行者</div></div>
+          <div class="actor" style="left:746px;top:228px;"><div class="ic">&#xF233;</div><div class="al">地域住民</div></div>
+          <div class="alabel" style="left:246px;top:140px;">お金（宿泊料）</div>
+          <div class="alabel" style="left:746px;top:135px;">貢献度に応じて<br>無料宿泊</div>
+          <div class="alabel" style="left:498px;top:252px;">集客 / 広報</div>
         </div>
       </div>
     </div>
@@ -157,10 +150,14 @@
             <div class="orow"><div class="otag">民泊運営</div><div class="ocard glass"><div class="ic">&#xF235;</div><div class="lab">国内外旅行者</div></div></div>
           </div>
         </div>
-        <div class="expand">
-          <div class="ex from"><div class="lab">ANGO<br>（厳選した物件）</div><div class="pct">1%</div><div class="sub">が対象だった空き家</div></div>
-          <div class="exarrow">›››</div>
-          <div class="ex to"><div class="lab">FANGO<br>（国内すべての空き家）</div><div class="pct">100%</div><div class="sub">を対象領域へ</div></div>
+        <div class="scope">
+          <div class="sc-conn"></div>
+          <div class="sc-cap">対象とする空き家が拡大 ── <b>国内すべての空き家へ</b></div>
+          <div class="scrow">
+            <div class="scbar from"><span class="l">ANGO<br>厳選物件</span><span class="p">1%</span></div>
+            <span class="scarrow">›</span>
+            <div class="scbar to"><span class="l">FANGO<br>国内すべて</span><span class="p">100%</span></div>
+          </div>
         </div>
       </div>
     </div>
