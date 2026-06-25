@@ -62,57 +62,49 @@ body.panel-open .canvas{ transform-origin:left center; }
    SLIDE 1 — RECIKA & products (UniCask / ANGO / FANGO)
    ===================================================================== */
 #s1 .b1{ width:420px;height:420px; right:-130px; top:-140px; } #s1 .b2{ width:320px;height:320px; left:-120px; bottom:-130px; }
-#s1 .reika-lead{ font-size:15px; font-weight:600; line-height:1.8; color:var(--muted); max-width:780px; }
-#s1 .reika-lead b{ color:var(--ink); font-weight:800; }
-#s1 .prods{ flex:1; display:grid; grid-template-columns:1fr 1fr 1fr; gap:20px; align-items:stretch; margin-top:6px; }
-#s1 .pcard{ position:relative; border-radius:18px; padding:26px 24px; display:flex; flex-direction:column; }
-#s1 .pcard .pno{ font-size:12px; font-weight:700; color:var(--faint); letter-spacing:.1em; }
-#s1 .pcard .pname{ font-size:32px; font-weight:800; letter-spacing:-.01em; color:var(--ink); margin-top:6px; }
-#s1 .pcard .ptag{ display:inline-block; align-self:flex-start; margin-top:12px; font-size:11.5px; font-weight:700;
-                  color:var(--blurple); background:#EEF0FF; border-radius:999px; padding:5px 12px; }
-#s1 .pcard .pdesc{ margin-top:16px; font-size:13px; line-height:1.78; color:var(--muted); }
-#s1 .pcard .parrow{ position:absolute; right:-16px; top:50%; transform:translateY(-50%); z-index:4;
-                    font-size:20px; font-weight:800; color:#C9D3E6; }
-#s1 .pcard.fango{ background:var(--grad); border:none; color:#fff; box-shadow:0 24px 50px -20px rgba(122,90,240,.5); }
-#s1 .pcard.fango .pno{ color:rgba(255,255,255,.8); }
+#s1 .prods{ flex:1; display:grid; grid-template-columns:repeat(3,1fr); grid-template-rows:1fr 1fr; gap:18px; }
+#s1 .pcard{ position:relative; border-radius:16px; padding:22px 26px; display:flex; flex-direction:column; justify-content:center; gap:13px; }
+#s1 .pcard .ic{ font-family:"Material Symbols Rounded"; font-size:40px; line-height:1;
+                background:var(--grad); -webkit-background-clip:text; background-clip:text; color:transparent; }
+#s1 .pcard .pname{ font-size:30px; font-weight:800; letter-spacing:-.01em; color:var(--ink); }
+#s1 .pcard .ptag{ font-size:15px; font-weight:700; color:var(--muted); }
+#s1 .pcard.fango{ background:var(--grad); border:none; box-shadow:0 24px 50px -20px rgba(122,90,240,.5); }
+#s1 .pcard.fango .ic{ background:none; -webkit-background-clip:initial; -webkit-text-fill-color:#fff; color:#fff; }
 #s1 .pcard.fango .pname{ color:#fff; }
-#s1 .pcard.fango .ptag{ color:#fff; background:rgba(255,255,255,.22); }
-#s1 .pcard.fango .pdesc{ color:rgba(255,255,255,.95); }
+#s1 .pcard.fango .ptag{ color:rgba(255,255,255,.95); }
 
 /* =====================================================================
    SLIDE 2 — nationwide minpaku map (15)
    ===================================================================== */
 #s2 .b1{ width:360px;height:360px; right:-130px; top:-130px; } #s2 .b2{ width:300px;height:300px; left:-120px; bottom:-130px; }
 #s2 .mapstage{ flex:1; position:relative; min-height:0; }
-#s2 .mapimg{ position:absolute; left:50%; top:48%; transform:translate(-50%,-50%); width:520px; height:408px; }
-#s2 .mapimg img{ width:100%; height:100%; object-fit:contain; opacity:.95; }
-#s2 svg.wires{ position:absolute; inset:0; width:100%; height:100%; pointer-events:none; z-index:1; }
-#s2 .loc{ position:absolute; z-index:2; border-radius:11px; padding:9px 13px; background:#fff;
-          border:1px solid var(--line); box-shadow:0 10px 26px -16px rgba(10,37,64,.3); }
-#s2 .loc .t{ font-weight:800; font-size:12px; color:var(--ink); letter-spacing:.01em; line-height:1.5; white-space:nowrap; }
+/* map-space coordinate frame: 520x408 = the silhouette; pins/lines/labels live in this space */
+#s2 .mapwrap{ position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); width:520px; height:408px; }
+#s2 .mapwrap > img{ position:absolute; inset:0; width:100%; height:100%; object-fit:contain; opacity:.95; }
+#s2 svg.wires{ position:absolute; inset:0; width:100%; height:100%; overflow:visible; pointer-events:none; z-index:1; }
+#s2 .loc{ position:absolute; z-index:2; transform:translate(-50%,-50%); white-space:nowrap;
+          background:#fff; border:1px solid var(--line); border-radius:9px; padding:6px 11px;
+          box-shadow:0 8px 22px -14px rgba(10,37,64,.35); }
+#s2 .loc .t{ font-weight:800; font-size:11.5px; color:var(--ink); line-height:1.25; letter-spacing:.01em; }
 #s2 .loc .t .n{ color:var(--blurple); }
+#s2 .loc .pre{ color:var(--faint); font-weight:700; font-size:9px; letter-spacing:.08em; }
 
 /* =====================================================================
    SLIDE 3 — ANGO 空き家再生モデル
    ===================================================================== */
 #s3 .b1{ width:380px;height:380px; right:-120px; top:-120px; } #s3 .b2{ width:300px;height:300px; left:-120px; bottom:-120px; }
-#s3 .stage6{ flex:1; position:relative; min-height:0; }
-#s3 .house{ position:absolute; left:50%; top:0; transform:translateX(-50%); text-align:center; }
-#s3 .house .ic{ font-family:"Material Symbols Rounded"; font-size:54px; background:var(--grad); -webkit-background-clip:text; background-clip:text; color:transparent; }
-#s3 .badge{ position:absolute; left:50%; top:74px; transform:translateX(-50%); font-weight:800; font-size:13px; color:var(--ink);
-            background:#fff; border:2px solid var(--blurple); border-radius:999px; padding:3px 16px; z-index:3; }
-#s3 .dbar{ position:absolute; left:9%; right:9%; top:108px; display:flex; border-radius:11px; overflow:hidden; box-shadow:0 14px 30px -16px rgba(80,70,150,.35); }
-#s3 .dbar .seg{ flex:1; padding:14px 0; text-align:center; font-weight:800; font-size:14px; color:#fff; }
-#s3 .seg-a{ background:linear-gradient(120deg,#1B2C42,#33455F); }
-#s3 .seg-b{ background:var(--grad); }
-#s3 .grp{ position:absolute; top:210px; text-align:center; }
-#s3 .grp .ic{ font-family:"Material Symbols Rounded"; font-size:46px; color:var(--blurple); }
-#s3 .grp .lab{ font-size:11.5px; font-weight:700; color:var(--ink-2); margin-top:2px; }
-#s3 .gleft{ left:24%; transform:translateX(-50%); } #s3 .gright{ left:76%; transform:translateX(-50%); }
-#s3 .fcard{ position:absolute; color:#fff; border-radius:12px; padding:12px 16px; width:240px; font-size:12.5px; font-weight:700; line-height:1.5;
-            background:var(--grad); box-shadow:0 14px 30px -16px rgba(122,90,240,.45); }
-#s3 .fc1{ left:50.5%; bottom:6px; } #s3 .fc2{ right:50.5%; bottom:6px; text-align:right; }
-#s3 .clab{ position:absolute; font-size:11.5px; font-weight:700; color:var(--blurple); }
+/* shared step-flow (also used on s5) */
+.steps{ flex:1; display:flex; align-items:center; justify-content:center; gap:4px; }
+.step{ flex:1; max-width:236px; border-radius:18px; padding:28px 20px; text-align:center;
+       background:#fff; border:1px solid var(--line); box-shadow:0 14px 34px -22px rgba(10,37,64,.22); }
+.step .ic{ font-family:"Material Symbols Rounded"; font-size:46px; line-height:1;
+           background:var(--grad); -webkit-background-clip:text; background-clip:text; color:transparent; }
+.step .lab{ font-size:16px; font-weight:800; color:var(--ink); margin-top:14px; line-height:1.45; }
+.step .sub{ font-size:11.5px; font-weight:600; color:var(--muted); margin-top:8px; line-height:1.5; }
+.step.hl{ background:var(--grad); border:none; box-shadow:0 22px 46px -18px rgba(122,90,240,.5); }
+.step.hl .ic{ background:none; -webkit-background-clip:initial; -webkit-text-fill-color:#fff; }
+.step.hl .lab{ color:#fff; } .step.hl .sub{ color:rgba(255,255,255,.92); }
+.step-arrow{ flex:0 0 44px; text-align:center; font-size:26px; font-weight:300; color:var(--blurple); }
 
 /* =====================================================================
    SLIDE 4 — FANGO value-up model (all vacant houses)
@@ -154,32 +146,27 @@ body.panel-open .canvas{ transform-origin:left center; }
    SLIDE 5 — from "findable" to "circulated" (vision)
    ===================================================================== */
 #s5 .b1{ width:420px;height:420px; right:-120px; top:-130px; } #s5 .b2{ width:340px;height:340px; left:-120px; bottom:-120px; }
-#s5 .fromto{ flex:1; display:grid; grid-template-columns:1fr auto 1fr; gap:22px; align-items:stretch; }
-#s5 .ftcard{ border-radius:18px; padding:30px 30px; display:flex; flex-direction:column; }
-#s5 .ftcard .tag{ font-size:12px; font-weight:800; letter-spacing:.14em; }
-#s5 .ftcard .ttl{ font-size:26px; font-weight:800; line-height:1.35; margin-top:12px; letter-spacing:-.01em; }
-#s5 .ftcard .ds{ margin-top:16px; font-size:13.5px; line-height:1.85; }
-#s5 .ftcard ul{ list-style:none; margin-top:14px; display:flex; flex-direction:column; gap:9px; }
-#s5 .ftcard li{ position:relative; padding-left:18px; font-size:13px; line-height:1.6; }
-#s5 .ftcard li::before{ content:""; position:absolute; left:0; top:7px; width:7px; height:7px; border-radius:50%; }
-/* FROM (空き家バンク = findable, muted) */
-#s5 .ftcard.from{ background:var(--subtle); border:1px solid var(--line); }
-#s5 .ftcard.from .tag{ color:var(--muted); }
-#s5 .ftcard.from .ttl{ color:var(--ink-2); }
-#s5 .ftcard.from .ds,#s5 .ftcard.from li{ color:var(--muted); }
-#s5 .ftcard.from li::before{ background:#AEB8C6; }
-/* TO (FANGO = circulated via AI, emphasized) */
-#s5 .ftcard.to{ background:#fff; border:2px solid transparent;
-  background-image:linear-gradient(#fff,#fff), var(--grad); background-origin:border-box; background-clip:padding-box,border-box;
-  box-shadow:0 24px 56px -26px rgba(122,90,240,.4); }
-#s5 .ftcard.to .tag{ background:var(--grad); -webkit-background-clip:text; background-clip:text; color:transparent; }
-#s5 .ftcard.to .ttl{ color:var(--ink); }
-#s5 .ftcard.to .ds,#s5 .ftcard.to li{ color:var(--ink-2); }
-#s5 .ftcard.to li::before{ background:var(--grad); }
-#s5 .ftcard.to .ai{ margin-top:auto; padding-top:16px; }
-#s5 .ftcard.to .ai .pill{ display:inline-flex; align-items:center; gap:8px; font-size:12px; font-weight:800; color:#fff;
-                          background:var(--grad); border-radius:999px; padding:7px 16px; }
-#s5 .ftarrow{ display:flex; align-items:center; font-size:34px; font-weight:300; color:var(--blurple); }
+#s5 .gapflow{ flex:1; display:grid; grid-template-columns:0.9fr 38px 1.35fr 38px 0.9fr; align-items:center; gap:4px; }
+#s5 .zone{ border-radius:18px; padding:26px 18px; text-align:center; background:#fff; border:1px solid var(--line);
+           box-shadow:0 14px 34px -22px rgba(10,37,64,.2); }
+#s5 .zone .ic{ font-family:"Material Symbols Rounded"; font-size:44px; line-height:1;
+               background:var(--grad); -webkit-background-clip:text; background-clip:text; color:transparent; }
+#s5 .zone .zt{ font-size:18px; font-weight:800; color:var(--ink); margin-top:12px; }
+#s5 .zone .zs{ font-size:11px; font-weight:600; color:var(--muted); margin-top:7px; line-height:1.55; }
+#s5 .zone.flow{ background:var(--grad); border:none; box-shadow:0 22px 46px -18px rgba(122,90,240,.5); }
+#s5 .zone.flow .ic{ background:none; -webkit-background-clip:initial; -webkit-text-fill-color:#fff; }
+#s5 .zone.flow .zt{ color:#fff; } #s5 .zone.flow .zs{ color:rgba(255,255,255,.95); }
+#s5 .ga{ text-align:center; font-size:24px; font-weight:300; color:var(--blurple); }
+#s5 .gap{ border-radius:18px; padding:18px 20px; background:var(--subtle); border:1px solid var(--line); }
+#s5 .gap .gh{ font-size:12.5px; font-weight:800; color:var(--ink); text-align:center; margin-bottom:13px; }
+#s5 .grow{ display:flex; align-items:center; gap:13px; padding:12px 15px; background:#fff; border:1px solid var(--line); border-radius:13px; }
+#s5 .grow + .grow{ margin-top:10px; }
+#s5 .grow .ic{ font-family:"Material Symbols Rounded"; font-size:26px; color:var(--blurple); flex:0 0 auto; }
+#s5 .grow .gt{ font-size:12.5px; font-weight:700; color:var(--ink-2); line-height:1.5; }
+#s5 .purposes{ display:flex; gap:7px; margin-top:8px; }
+#s5 .pchip{ display:inline-flex; align-items:center; gap:5px; font-size:11px; font-weight:700; color:var(--blurple);
+            background:#EEF0FF; border-radius:999px; padding:4px 11px; }
+#s5 .pchip .ic{ font-family:"Material Symbols Rounded"; font-size:15px; color:var(--blurple); }
 
 
 /* ============ /deck engine chrome (nav · comment · banner · modal · avatar) ============ */
