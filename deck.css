@@ -152,22 +152,26 @@ body.panel-open .canvas{ transform-origin:left center; }
 #s4 .ocard{ border-radius:12px; padding:11px 16px; display:flex; align-items:center; gap:12px; }
 #s4 .ocard .ic{ font-family:"Material Symbols Rounded"; font-size:22px; background:var(--grad); -webkit-background-clip:text; background-clip:text; color:transparent; }
 #s4 .ocard .lab{ font-size:13px; font-weight:700; color:var(--ink); }
-/* scope: ties the 1%->100% to the 空き家 input node of the flow above */
-#s4 .scope{ align-self:flex-start; width:470px; margin-top:24px; position:relative; }
-#s4 .scope .sc-conn{ position:absolute; left:66px; top:-24px; width:2px; height:24px;
-                     background:linear-gradient(#C9D3E6,#B9A8E0); }
-#s4 .scope .sc-conn::before{ content:""; position:absolute; left:-3px; top:-7px;
-                     border-left:4px solid transparent; border-right:4px solid transparent; border-bottom:7px solid #B9A8E0; }
-#s4 .scope .sc-cap{ font-size:13px; font-weight:800; color:var(--ink); margin-bottom:10px; }
-#s4 .scope .sc-cap b{ color:var(--blurple); }
-#s4 .scrow{ display:flex; align-items:center; gap:14px; }
-#s4 .scbar{ border-radius:13px; padding:11px 20px; display:flex; align-items:baseline; gap:9px; }
-#s4 .scbar .l{ font-size:12.5px; font-weight:800; }
-#s4 .scbar .p{ font-size:30px; font-weight:800; letter-spacing:-.02em; }
-#s4 .scbar.from{ background:var(--subtle); border:1px solid var(--line); color:var(--ink-2); }
-#s4 .scbar.from .p{ color:var(--ink-2); }
-#s4 .scbar.to{ background:var(--grad); color:#fff; }
-#s4 .scarrow{ font-size:24px; font-weight:300; color:var(--blurple); }
+/* expansion: proportional 1% vs 100% bars (full width), tied to 空き家 */
+#s4 .expand2{ margin-top:30px; position:relative; }
+#s4 .expand2 .sc-conn{ position:absolute; left:66px; top:-30px; width:2px; height:30px;
+                       background:linear-gradient(#C9D3E6,#B9A8E0); }
+#s4 .expand2 .sc-conn::before{ content:""; position:absolute; left:-3px; top:-7px;
+                       border-left:4px solid transparent; border-right:4px solid transparent; border-bottom:7px solid #B9A8E0; }
+#s4 .ex2-cap{ font-size:13px; font-weight:800; color:var(--ink); margin-bottom:15px; }
+#s4 .ex2-cap b{ color:var(--blurple); }
+#s4 .ex2-row{ display:grid; grid-template-columns:128px 1fr 232px; gap:18px; align-items:center; }
+#s4 .ex2-row + .ex2-row{ margin-top:13px; }
+#s4 .ex2-name{ font-size:13.5px; font-weight:800; color:var(--ink); line-height:1.3; }
+#s4 .ex2-name small{ display:block; font-size:10.5px; font-weight:600; color:var(--muted); }
+#s4 .ex2-track{ height:32px; background:var(--subtle); border:1px solid var(--line); border-radius:8px; overflow:hidden; }
+#s4 .ex2-fill{ height:100%; border-radius:7px; }
+#s4 .ex2-row.from .ex2-fill{ width:1%; min-width:8px; background:#A7B0E6; }
+#s4 .ex2-row.to .ex2-fill{ width:100%; background:var(--grad); box-shadow:0 8px 22px -10px rgba(122,90,240,.5); }
+#s4 .ex2-val{ font-size:13px; font-weight:700; color:var(--muted); display:flex; align-items:baseline; gap:7px; white-space:nowrap; }
+#s4 .ex2-val .pct{ font-size:30px; font-weight:800; letter-spacing:-.02em; color:var(--ink-2); }
+#s4 .ex2-row.to .ex2-val .pct{ font-size:40px; background:var(--grad); -webkit-background-clip:text; background-clip:text; color:transparent; }
+#s4 .ex2-row.to .ex2-val{ color:var(--ink); }
 
 /* =====================================================================
    SLIDE 5 — from "findable" to "circulated" (vision)
