@@ -183,10 +183,11 @@ body.panel-open .canvas{ transform-origin:left center; }
             background:var(--grad); -webkit-background-clip:text; background-clip:text; color:transparent; }
 #s4 .commu .cm .lab{ font-size:13px; font-weight:800; color:var(--ink); white-space:nowrap; }
 
-/* edge labels (white chip over the line) */
-#s4 .elab{ position:absolute; z-index:3; transform:translate(-50%,-50%);
-           font-size:12.5px; font-weight:700; color:var(--blurple); white-space:nowrap;
-           background:var(--paper); padding:2px 8px; }
+/* edge labels — match the rounded-pill style used on slide 3 */
+#s4 .elab{ position:absolute; z-index:3; transform:translate(-50%,-50%); white-space:nowrap; text-align:center;
+           background:#fff; border:1px solid var(--line); border-radius:999px; padding:6px 15px;
+           font-size:12.5px; font-weight:800; color:var(--blurple); line-height:1.3;
+           box-shadow:0 8px 20px -12px rgba(10,37,64,.32); }
 
 /* =====================================================================
    SLIDE 5 — from "findable" to "circulated" (vision)

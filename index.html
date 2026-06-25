@@ -151,15 +151,20 @@
         <div class="vmap">
           <svg class="vlines" viewBox="0 0 1150 520" width="1150" height="520" preserveAspectRatio="none">
             <defs>
-              <marker id="ah4" markerWidth="9" markerHeight="9" refX="6" refY="4.5" orient="auto">
-                <path d="M0,0 L9,4.5 L0,9 Z" fill="#8C99BE"/>
+              <marker id="ah4" markerWidth="10" markerHeight="10" refX="6.5" refY="5" orient="auto">
+                <path d="M0,0 L10,5 L0,10 Z" fill="#635BFF"/>
               </marker>
             </defs>
-            <g fill="none" stroke="#9AA6C8" stroke-width="2" marker-end="url(#ah4)">
+            <!-- bus trunk + riser feeding the 3 recipients (no heads) -->
+            <g fill="none" stroke="#635BFF" stroke-width="2.6">
+              <path d="M760,95 L760,380"/>
+            </g>
+            <!-- arrowed edges -->
+            <g fill="none" stroke="#635BFF" stroke-width="2.6" marker-end="url(#ah4)">
               <path d="M132,232 L460,232"/>
-              <path d="M655,180 L808,180 L808,95 L958,95"/>
+              <path d="M760,95 L958,95"/>
               <path d="M655,240 L958,240"/>
-              <path d="M655,300 L808,300 L808,380 L958,380"/>
+              <path d="M760,380 L958,380"/>
               <path d="M410,452 L78,452 L78,264"/>
               <path d="M710,452 L1140,452 L1140,240 L1122,240"/>
               <path d="M1140,380 L1122,380"/>
@@ -184,11 +189,11 @@
           <div class="node rcp" style="left:1040px;top:240px;"><div class="ic">&#xE73C;</div><div class="lab">新規居住者</div></div>
           <div class="node rcp" style="left:1040px;top:380px;"><div class="ic">&#xF235;</div><div class="lab">国内外旅行者</div></div>
 
-          <div class="elab" style="left:295px;top:232px;">仕入</div>
-          <div class="elab" style="left:845px;top:78px;">物件販売</div>
-          <div class="elab" style="left:805px;top:222px;">賃貸、他</div>
-          <div class="elab" style="left:845px;top:362px;">民泊運営</div>
-          <div class="elab" style="left:218px;top:452px;">地元物件発掘</div>
+          <div class="elab" style="left:296px;top:232px;">仕入</div>
+          <div class="elab" style="left:862px;top:95px;">物件販売</div>
+          <div class="elab" style="left:862px;top:240px;">賃貸、他</div>
+          <div class="elab" style="left:862px;top:380px;">民泊運営</div>
+          <div class="elab" style="left:215px;top:452px;">地元物件発掘</div>
           <div class="elab" style="left:925px;top:452px;">コミュニティとして集客マーケティング活動</div>
         </div>
       </div>
