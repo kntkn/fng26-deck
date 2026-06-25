@@ -84,10 +84,11 @@ body.panel-open .canvas{ transform-origin:left center; }
                 background:var(--grad); -webkit-background-clip:text; background-clip:text; color:transparent; }
 #s1 .pcard .pname{ font-size:30px; font-weight:800; letter-spacing:-.01em; color:var(--ink); }
 #s1 .pcard .ptag{ font-size:15px; font-weight:700; color:var(--muted); }
-#s1 .pcard.fango{ background:var(--grad); border:none; box-shadow:0 24px 50px -20px rgba(122,90,240,.5); }
-#s1 .pcard.fango .ic{ background:none; -webkit-background-clip:initial; -webkit-text-fill-color:#fff; color:#fff; }
-#s1 .pcard.fango .pname{ color:#fff; }
-#s1 .pcard.fango .ptag{ color:rgba(255,255,255,.95); }
+/* ANGO / FANGO emphasized via gradient border (not filled bg) */
+#s1 .pcard.fango{ border:2.5px solid transparent;
+  background-image:linear-gradient(#fff,#fff), var(--grad);
+  background-origin:border-box; background-clip:padding-box,border-box;
+  box-shadow:0 18px 42px -20px rgba(122,90,240,.42); }
 
 /* =====================================================================
    SLIDE 2 — nationwide minpaku map (15)
