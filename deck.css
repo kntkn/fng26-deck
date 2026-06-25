@@ -107,18 +107,35 @@ body.panel-open .canvas{ transform-origin:left center; }
    SLIDE 3 — ANGO 空き家再生モデル
    ===================================================================== */
 #s3 .b1{ width:380px;height:380px; right:-120px; top:-120px; } #s3 .b2{ width:300px;height:300px; left:-120px; bottom:-120px; }
-/* shared step-flow (also used on s5) */
-.steps{ flex:1; display:flex; align-items:center; justify-content:center; gap:4px; }
-.step{ flex:1; max-width:236px; border-radius:18px; padding:28px 20px; text-align:center;
-       background:#fff; border:1px solid var(--line); box-shadow:0 14px 34px -22px rgba(10,37,64,.22); }
-.step .ic{ font-family:"Material Symbols Rounded"; font-size:46px; line-height:1;
-           background:var(--grad); -webkit-background-clip:text; background-clip:text; color:transparent; }
-.step .lab{ font-size:16px; font-weight:800; color:var(--ink); margin-top:14px; line-height:1.45; }
-.step .sub{ font-size:11.5px; font-weight:600; color:var(--muted); margin-top:8px; line-height:1.5; }
-.step.hl{ background:var(--grad); border:none; box-shadow:0 22px 46px -18px rgba(122,90,240,.5); }
-.step.hl .ic{ background:none; -webkit-background-clip:initial; -webkit-text-fill-color:#fff; }
-.step.hl .lab{ color:#fff; } .step.hl .sub{ color:rgba(255,255,255,.92); }
-.step-arrow{ flex:0 0 44px; text-align:center; font-size:26px; font-weight:300; color:var(--blurple); }
+#s3 .s-body{ justify-content:center; gap:22px; }
+/* year bar — the open "185 days" inventory created by the 180-day cap */
+#s3 .yb-cap{ font-size:12.5px; font-weight:700; color:var(--ink-2); margin-bottom:9px; }
+#s3 .yb-cap b{ color:var(--blurple); font-weight:800; }
+#s3 .yb-track{ display:flex; height:44px; border-radius:11px; overflow:hidden; box-shadow:0 10px 26px -16px rgba(10,37,64,.25); }
+#s3 .yb-seg{ display:flex; align-items:center; justify-content:center; gap:8px; color:#fff; font-weight:700; font-size:13.5px; }
+#s3 .yb-seg .big{ font-size:19px; font-weight:800; letter-spacing:-.01em; }
+#s3 .yb-op{ background:linear-gradient(120deg,#3C3C42,#55555E); }
+#s3 .yb-free{ background:var(--grad); }
+/* mechanism: help → earn tokens → spend tokens to stay (cross-property) */
+#s3 .mech{ display:flex; align-items:stretch; justify-content:center; gap:6px; }
+#s3 .mcard{ flex:1; max-width:312px; border-radius:16px; padding:20px 22px; background:#fff;
+            border:1px solid var(--line); box-shadow:0 14px 34px -22px rgba(10,37,64,.22); display:flex; flex-direction:column; }
+#s3 .mcard .ic{ font-family:"Material Symbols Rounded"; font-size:38px; line-height:1;
+                background:var(--grad); -webkit-background-clip:text; background-clip:text; color:transparent; }
+#s3 .mcard .mt{ font-size:15px; font-weight:800; color:var(--ink); margin-top:12px; line-height:1.45; }
+#s3 .mcard .ms{ font-size:11.5px; font-weight:600; color:var(--muted); margin-top:9px; line-height:1.6; }
+#s3 .mcard .ms b{ color:var(--blurple); font-weight:800; }
+#s3 .mcard.hl{ background:var(--grad); border:none; box-shadow:0 22px 46px -18px rgba(122,90,240,.5); }
+#s3 .mcard.hl .ic{ background:none; -webkit-background-clip:initial; -webkit-text-fill-color:#fff; }
+#s3 .mcard.hl .mt{ color:#fff; }
+#s3 .chips{ display:flex; flex-wrap:wrap; gap:6px; margin-top:11px; }
+#s3 .chips span{ font-size:10.5px; font-weight:700; padding:4px 10px; border-radius:999px; background:rgba(255,255,255,.22); color:#fff; }
+#s3 .marrow{ flex:0 0 30px; display:flex; align-items:center; justify-content:center; font-size:24px; color:var(--blurple); font-weight:300; }
+#s3 .route{ display:flex; align-items:center; justify-content:center; gap:9px; margin-top:12px; }
+#s3 .route .node{ font-size:13px; font-weight:800; color:var(--ink); background:var(--subtle); border:1px solid var(--line);
+                  border-radius:10px; padding:7px 11px; text-align:center; line-height:1.25; }
+#s3 .route .node small{ display:block; font-size:9px; font-weight:600; color:var(--muted); }
+#s3 .route .rw{ font-family:"Material Symbols Rounded"; font-size:20px; color:var(--blurple); }
 
 /* =====================================================================
    SLIDE 4 — FANGO value-up model (all vacant houses)
